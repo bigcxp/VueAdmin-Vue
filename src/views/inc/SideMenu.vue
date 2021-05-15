@@ -62,4 +62,7 @@
 	.el-menu-vertical-demo {
 		height: 100%;
 	}
+	a{
+		text-decoration: none;
+	}
 </style>

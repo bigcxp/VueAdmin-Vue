@@ -101,8 +101,8 @@ Mock.mock('/sys/menu/nav', 'get', () => {
 	let authoritys = ['sys:user:list', "sys:user:save", "sys:user:delete"]
 
 	Result.data = {
-		nav: nav,
-		authoritys: authoritys
+		nav,
+		authoritys
 	}
 
 	return Result

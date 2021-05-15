@@ -2,10 +2,10 @@
 	<el-row type="flex" class="row-bg" justify="center">
 		<el-col :xl="6" :lg="7">
 			<h2>VueAdmin管理系统</h2>
-			<el-image :src="require('@/assets/code.jpg')" style="height: 180px; width: 180px;"></el-image>
-
+			
+<el-image :src="require('@/assets/code.jpg')" style="height: 180px; width: 180px;"></el-image>
 			<p>昵称 风与路人</p>
-			<p>扫码二维码，备注【 VueAdmin 】获取登录密码</p>
+			<p>扫描二维码，备注【 VueAdmin 】获取登录密码</p>
 
 		</el-col>
 
@@ -26,7 +26,7 @@
 				</el-form-item>
 
 				<el-form-item>
-					<el-button type="primary" @click="submitForm('loginForm')">立即创建</el-button>
+					<el-button type="primary" @click="submitForm('loginForm')">登录</el-button>
 					<el-button @click="resetForm('loginForm')">重置</el-button>
 				</el-form-item>
 			</el-form>
@@ -61,7 +61,7 @@
 						{ min: 5, max: 5, message: '长度为 5 个字符', trigger: 'blur' }
 					],
 				},
-				captchaImg: null
+				captchaImg: ''
 			};
 		},
 		methods: {
@@ -94,7 +94,7 @@
 					console.log(res)
 
 					this.loginForm.token = res.data.data.token
-					this.captchaImg = res.data.data.captchaImg
+					this.captchaImg = res.data.data.base64Img
 					this.loginForm.code = ''
 				})
 			}
